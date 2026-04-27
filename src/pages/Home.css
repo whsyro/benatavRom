@@ -1,0 +1,151 @@
+/* Stilurile paginii Home: hero, statistici, carduri și bannerul final. */
+.hero {
+  background: var(--black);
+  color: #fff;
+  padding: 7rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-line {
+  position: absolute;
+  right: -60px;
+  top: 0;
+  bottom: 0;
+  width: 480px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+}
+
+.hero-content { position: relative; max-width: 680px; }
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+.hero-title .accent { color: var(--accent); }
+
+.hero-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  max-width: 540px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.stats-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid var(--border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+
+.stat-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--mid);
+  margin-top: 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--black);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.highlight-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.highlight-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--black);
+}
+
+.highlight-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.cta-banner {
+  background: var(--accent);
+  padding: 4rem 0;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-banner h2 {
+  font-size: 1.9rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.cta-banner p { color: rgba(255,255,255,0.85); font-size: 15px; }
+
+.cta-banner .btn-primary {
+  background: #fff;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.cta-banner .btn-primary:hover { background: var(--black); color: #fff; }
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-bottom: 1px solid var(--border); }
+  .cta-inner { flex-direction: column; align-items: flex-start; }
+}

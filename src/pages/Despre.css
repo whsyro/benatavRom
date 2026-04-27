@@ -1,0 +1,64 @@
+/* Stilurile pentru pagina Despre și blocurile ei informative. */
+.page-hero {
+  background: var(--black);
+  color: #fff;
+  padding: 4rem 0;
+}
+.page-hero h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-top: 0.5rem;
+}
+
+.despre-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.despre-text h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+.despre-text p { font-size: 15px; line-height: 1.8; color: var(--mid); }
+
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-row span { color: var(--light); }
+.info-row strong { color: var(--black); font-weight: 500; }
+
+.valori-section { background: var(--bg); }
+
+.valori-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.valoare-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  border-top: 3px solid var(--accent);
+}
+.valoare-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--black);
+}
+.valoare-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .despre-grid { grid-template-columns: 1fr; gap: 2rem; }
+}

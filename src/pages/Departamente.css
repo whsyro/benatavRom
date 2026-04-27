@@ -1,0 +1,101 @@
+/* Stilurile pentru layoutul departamentelor și panoul cu detalii. */
+.dep-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.dep-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: sticky;
+  top: 90px;
+}
+
+.dep-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s;
+}
+.dep-tab:hover { background: var(--bg); border-left-color: var(--light); }
+.dep-tab.active { border-left-color: var(--accent); background: var(--white); }
+.dep-tab strong { font-size: 15px; font-weight: 600; color: var(--black); font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.04em; }
+.dep-tab span { font-size: 12px; color: var(--light); }
+.dep-tab.active strong { color: var(--accent); }
+
+.dep-content {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+}
+
+.dep-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.dep-header h2 { font-size: 2rem; }
+
+.dep-badge {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+}
+
+.dep-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 2rem;
+}
+
+.dep-content h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.dep-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+}
+.dep-list li {
+  font-size: 14px;
+  color: var(--mid);
+  padding-left: 1.1rem;
+  position: relative;
+}
+.dep-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .dep-layout { grid-template-columns: 1fr; }
+  .dep-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
+  .dep-tab { flex: 1; min-width: 140px; border-left: 1px solid var(--border); border-top: 3px solid transparent; }
+  .dep-tab.active { border-top-color: var(--accent); border-left-color: var(--border); }
+}
