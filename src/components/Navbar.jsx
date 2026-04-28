@@ -40,17 +40,6 @@ export default function Navbar({ page, navigate }) {
               {l.label}
             </a>
           ))}
-
-          {/* Butonul de contact din meniu. */}
-          <a
-            className="btn-primary nav-cta"
-            onClick={() => {
-              navigate("contact");
-              setOpen(false);
-            }}
-          >
-            Contactează-ne
-          </a>
         </nav>
 
         {/* Butonul hamburger pentru mobil. */}
